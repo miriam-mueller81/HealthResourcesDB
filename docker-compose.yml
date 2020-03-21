@@ -1,0 +1,20 @@
+version: "3"
+services:
+  web:
+    build: backend
+    command: php tbd
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/code # modified here to take into account the new app path
+    links:
+      - db
+  db:
+    image: postgres
+  # agent section
+  static:
+    image: nginx
+    links:
+      - web # ensures that the web app can send metrics
+    volumes:
+      - ./frontend:/var/www/frontend
