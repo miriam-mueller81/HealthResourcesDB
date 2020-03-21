@@ -12,6 +12,8 @@ Install instructions:
 - cd backend
 - composer install
 - symfony server:start
+- php bin/console doctrine:database:create
+- php bin/console doctrine:migrations:migrate
 
 Test your setup:
 - open 'http://localhost:8000/dummy/index' in your browser
