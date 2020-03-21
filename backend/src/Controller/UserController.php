@@ -86,7 +86,7 @@ class UserController extends AbstractController
      * @param Request $request
      * @return JsonResponse
      */
-    public function put(string $id, Request$request): JsonResponse
+    public function put(string $id, Request $request): JsonResponse
     {
         $userId = (int) $id;
 
@@ -139,7 +139,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/api/user/{id}", methods={"POST"})
+     * @Route("/api/user", methods={"POST"})
      *
      * @example
      * {
