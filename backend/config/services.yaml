@@ -29,5 +29,9 @@ services:
     App\Controller\UserController:
         tags: [controller.service_arguments]
         bind:
-            # for any $logger argument, pass this specific service
+            $doctrine: '@doctrine'
+
+    App\Controller\ArticleController:
+        tags: [controller.service_arguments]
+        bind:
             $doctrine: '@doctrine'
